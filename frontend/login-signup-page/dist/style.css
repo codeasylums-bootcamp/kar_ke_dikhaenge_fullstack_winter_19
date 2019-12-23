@@ -86,7 +86,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #28B498;
+  background-image: linear-gradient(45deg,red,white);
   padding: 0 2rem;
   color: #FFFFFF;
 }
@@ -139,7 +139,7 @@ body {
 .btn {
   width: 23.5rem;
   min-height: 5.5rem;
-  background-color: #28B498;
+  background-color: red;
   border-radius: 3rem;
   outline: 0;
   border: none;
@@ -156,7 +156,7 @@ body {
   transition: .3s;
 }
 .btn:hover, .btn:active {
-  background-color: #2dc9aa;
+  background-color: red;
 }
 .btn-white {
   background-color: #FFFFFF;
@@ -165,7 +165,7 @@ body {
 }
 .btn-white:hover, .btn-white:active {
   background-color: #FFFFFF;
-  color: #28B498;
+  color: red;
   box-shadow: none;
 }
 
