@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const constants = require("./constants");
 const bodyParser = require("body-parser");
 const middlewares = require("./middleware");
+// const cors = require('cors');
 
 const AuthController = require("./controllers/AuthController");
 const UserController = require("./controllers/UserController");
@@ -13,7 +14,13 @@ mongoose.connect(constants.DB_URI, {
 });
 
 const app = express();
+app.use(
+  "/frontend",
+  express.static(__dirname + "/public/frontend/userLogin-Register")
+);
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(cors());
 
 app.post("/register",AuthController.register);
 app.post("/login",AuthController.login);

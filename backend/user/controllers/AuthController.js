@@ -2,8 +2,11 @@ const UserModel = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const express = require("express");
 
+const app = express();
 
+// app.use("/frontend", express.static(__dirname + "/login-signup-page"));
 
 module.exports = {
     register(req,res){
@@ -27,7 +30,9 @@ module.exports = {
     },
 
     login(req,response){
+      // response.header("Access-Control-Allow-Origin", "*");
         let {username,password} = req.body;
+        
         UserModel.findOne({username},(err,result) => {
               if (err) {
                 response.status(500);
