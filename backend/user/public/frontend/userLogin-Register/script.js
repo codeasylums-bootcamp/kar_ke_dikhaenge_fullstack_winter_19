@@ -2,6 +2,11 @@ const login = document.getElementById('login');
 const signup = document.getElementById('signup');
 const loginUsername = document.querySelector('#login_username');
 const loginPassword = document.querySelector('#login_password');
+const registerUsername = document.querySelector("#userRegister");
+const registerType = document.querySelector("#typeRegister");
+const registerPassword = document.querySelector("#passwordRegister");
+const registerEmail = document.querySelector("#emailRegister");
+
 
 const showText = {
   login : {
@@ -62,7 +67,7 @@ function checkLoginDetails(){
     username: loginUsername.value,
     password: loginPassword.value
   };
-var xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 xhr.open("POST", "http://localhost:3000/login", true);
 
 //Send the proper header information along with the request
@@ -78,6 +83,33 @@ console.log(JSON.stringify(params));
      xhr.send(JSON.stringify(params));
 
 
+}
+
+
+
+function registerUser(){
+// console.log(registerEmail.value)
+  const registerUser = {
+    username: registerUsername.value,
+    email: registerEmail.value,
+    password: registerPassword.value,
+    usertype: registerType.value
+  }
+
+  let http = new XMLHttpRequest();
+  http.open("POST", "http://localhost:3000/register", true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader("Content-Type", "application/json");
+
+  http.onreadystatechange = function() {
+    // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      // Request finished. Do processing here.
+    }
+  };
+  console.log(JSON.stringify(registerUser));
+  http.send(JSON.stringify(registerUser));
 }
 
 

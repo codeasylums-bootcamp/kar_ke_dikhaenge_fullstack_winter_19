@@ -60,20 +60,18 @@
   </div>
   <fieldset class="form">
     <legend class="form__legend">OR</legend>
-  <form action="" class="form__body form-login">
     <div class="input__group">
-        <input class="form__input form__input-half" type="text" placeholder="Username">
-        <input class="form__input form__input-half" type="text" placeholder="User Type">
+        <input class="form__input form__input-half" id="userRegister"type="text" placeholder="Username">
+        <input class="form__input form__input-half" id="typeRegister"type="text" placeholder="User Type">
     </div>
     <div class="input__group">
-       <input class="form__input form__input-half" type="email" placeholder="Email">
-       <input class="form__input form__input-half" type="password" placeholder="Password">      
+       <input class="form__input form__input-half" id="emailRegister" type="email" placeholder="Email">
+       <input class="form__input form__input-half" id="passwordRegister" type="password" placeholder="Password">      
     </div>
     <div class="input__group">
       <input class="form__input-checkbox" type="checkbox"> I have read the <a href="#">terms and conditions</a>
     </div>
-     <button class="btn" type="submit">Sign up</button> 
-  </form>  
+     <button class="btn" type="submit" onclick="registerUser()">Sign up</button>  
     </fieldset>
 </div>
   
