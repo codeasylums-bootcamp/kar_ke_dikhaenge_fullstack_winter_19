@@ -8,11 +8,11 @@ const saltRounds = 10;
 module.exports = {
     register(req,res){
         // res.send("OK");
-        let {email,password} = req.body;
+        let {username,email,password,usertype} = req.body;
         // TODO validate email password
         bcrypt.hash(password, saltRounds, function(err, hash) {
           password = hash;
-          let user = new UserModel({ email, password });
+          let user = new UserModel({ username, email, password, usertype });
                   user.save((err, result) => {
                     if (err) {
                       res.status(500);
@@ -27,8 +27,8 @@ module.exports = {
     },
 
     login(req,response){
-        let {email,password} = req.body;
-        UserModel.findOne({email},(err,result) => {
+        let {username,password} = req.body;
+        UserModel.findOne({username},(err,result) => {
               if (err) {
                 response.status(500);
                 response.send("error");
