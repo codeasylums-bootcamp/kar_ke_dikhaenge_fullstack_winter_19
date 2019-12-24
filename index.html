@@ -502,3 +502,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     
   </body>
 </html>
+
+<!-- function restRegister(){
+// console.log(registerEmail.value)
+  const restRegister = {
+    rest_name: document.getElementByID("rest_name").value,
+    rest_email: document.getElementByID("rest_email").value,
+    rest_contact_detail: document.getElementByID("rest_contact").value,
+    rest_address: document.getElementByID("rest_address").value,
+    rest_password: document.getElementByID("rest_password").value
+  }
+
+  let http = new XMLHttpRequest();
+  http.open("POST", "http://localhost:3000/restRegister", true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader("Content-Type", "application/json");
+
+  http.onreadystatechange = function() {
+    // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      // Request finished. Do processing here.
+      alert("Successfully Booked")
+    }
+  };
+  console.log(JSON.stringify(restRegister));
+  http.send(JSON.stringify(restRegister));
+} -->

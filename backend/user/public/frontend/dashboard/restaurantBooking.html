@@ -148,7 +148,7 @@
         <label for="exampleFormControlInput1">Restaurant Password</label>
         <input id="rest_password" type="text" class="form-control col-md-8 "style="width:300px" id="exampleFormControlInput1" placeholder="RESERVE BY THE NAME OF">
       </div>
-      <button class="btn-primary" onclick="registerUser()">Submit</button>
+      <button class="btn-primary" onclick="restRegister()">Submit</button>
       <!-- <div class="form-group">
           <label for="exampleFormControlSelect1">RESTUARANT NAME :-</label>
           <select class="form-control" id="restaurant_names" style="width:300px;">
@@ -247,7 +247,7 @@
 
     </form>
     <script>
-      function registerUser(){
+      function restRegister(){
         console.log(registerEmail.value)
         const registerUser = {
         rest_name: document.getElementById("rest_name").value,

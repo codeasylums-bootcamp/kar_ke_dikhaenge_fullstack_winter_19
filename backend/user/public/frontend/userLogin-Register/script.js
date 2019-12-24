@@ -68,7 +68,10 @@ function checkLoginDetails(){
     password: loginPassword.value
   };
 let xhr = new XMLHttpRequest();
+let http = new XMLHttpRequest();
 xhr.open("POST", "http://localhost:3000/login", true);
+http.open("GET", "http://localhost:3000/userdata",true);
+// http.send();
 
 //Send the proper header information along with the request
 xhr.setRequestHeader("Content-Type", "application/json");
@@ -77,11 +80,15 @@ xhr.onreadystatechange = function() {
   // Call a function when the state changes.
   if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
     // Request finished. Do processing here.
+    // console.log("Hogaya");
+    // window.location.href = `http://localhost:3000/dashboard/`;
   }
 };
+
+  // window.location.href = "localhost:3000/dashboard";
 console.log(JSON.stringify(params));
      xhr.send(JSON.stringify(params));
-
+    //  xhr.redirect(`/public/frontend/dashboard/index.html`);
 
 }
 
